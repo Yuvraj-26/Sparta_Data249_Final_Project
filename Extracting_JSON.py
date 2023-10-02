@@ -14,12 +14,21 @@ try:
         json_objects = [obj for obj in response['Contents'] if obj['Key'].endswith('.json')]
         for json_object in json_objects:
             response = s3_resource.Object(bucket_name, json_object['Key']).get()
+            json_content = response['Body'].read()
+            data = json.loads(json_content)
 
-            df = pd.read_csv(response['Body'])
-            print(df)
+            if isinstance(data, list):  # Check if the JSON data is a list of dictionaries
+                df = pd.DataFrame(data)
+                print(df)
+            elif isinstance(data, dict):  # Check if the JSON data is a single dictionary
+                df = pd.DataFrame([data])
+                print(df)
+            else:
+                print(f"Unsupported JSON format in '{json_object['Key']}'")
 
     else:
         print(f"No objects found in the '{directory_prefix}' directory.")
 except Exception as e:
     print(f"Error: {e}")
+
 
