@@ -21,12 +21,13 @@ def json_df():
                 data = json.loads(json_content)
                 df_array.append(data)
 
+                # Test here to check that is correctly extracted in proper Data frame format
                 if isinstance(data, list):  # Check if the JSON data is a list of dictionaries
                     df = pd.DataFrame(data)
-                    #print(df)
+                    print(df)
                 elif isinstance(data, dict):  # Check if the JSON data is a single dictionary
                     df = pd.DataFrame([data])
-                    #print(df)
+                    print(df)
                 else:
                     print(f"Unsupported JSON format in '{json_object['Key']}'")
 
@@ -35,4 +36,7 @@ def json_df():
     except Exception as e:
         print(f"Error: {e}")
 
+    # Test to check count of extracted files is same as expected (is it one to one)
+    # Test that data frames are not empty
+    # Test expected number of columns and rows
     #print(df_array)
