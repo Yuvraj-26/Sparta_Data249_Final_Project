@@ -17,10 +17,8 @@ while True:
     else:
         # First call without continuation token
         response = s3_client.list_objects_v2(Bucket=bucket_name, Prefix=prefix)
-
     # Add the objects from the current response to the list
     all_objects.extend(response.get('Contents', []))
-
     # Check if there are more objects to fetch
     if response.get('IsTruncated'):
         continuation_token = response['NextContinuationToken']
