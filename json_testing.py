@@ -6,28 +6,29 @@ import pandas as pd
 from Extracting_JSON import json_df  # Import json_df function from main script
 
 class TestJsonToDataFrame(unittest.TestCase):
-    @patch('boto3.client')
-    @patch('boto3.resource')
-    def test_json_extraction(self, mock_boto3_resource, mock_boto3_client):
+    def setUp(self):
         # Mock S3 client and resource
-        mock_s3_client = Mock()
-        mock_s3_resource = Mock()
-        mock_boto3_client.return_value = mock_s3_client
-        mock_boto3_resource.return_value = mock_s3_resource
+        self.mock_s3_client = Mock()
+        self.mock_s3_resource = Mock()
+        self.mock_boto3_client = patch('boto3.client', return_value=self.mock_s3_client)
+        self.mock_boto3_resource = patch('boto3.resource', return_value=self.mock_s3_resource)
+
+        self.mock_boto3_client.start()
+        self.mock_boto3_resource.start()
 
         # Mock S3 response with JSON data
-        bucket_name = 'data-249-final-project'
-        directory_prefix = 'Talent/'
-        mock_s3_response = {
+        self.bucket_name = 'data-249-final-project'
+        self.directory_prefix = 'Talent/'
+        self.mock_s3_response = {
             'Contents': [
                 {
-                    'Key': f'{directory_prefix}mock.json'
+                    'Key': f'{self.directory_prefix}mock.json'
                 }
             ]
         }
 
         # Mock JSON data with 10 columns and 1 row
-        mock_json_data = {
+        self.mock_json_data = {
             'column1': 'value1',
             'column2': 'value2',
             'column3': 'value3',
@@ -40,29 +41,33 @@ class TestJsonToDataFrame(unittest.TestCase):
             'column10': 'value10'
         }
 
-        mock_s3_client.list_objects.return_value = mock_s3_response
+        self.mock_s3_client.list_objects.return_value = self.mock_s3_response
 
         # Mock S3.Object().get() and read() methods
-        mock_s3_object = Mock()
-        mock_s3_resource.Object.return_value = mock_s3_object
-        mock_s3_object.get.return_value = {'Body': BytesIO(json.dumps(mock_json_data).encode())}
+        self.mock_s3_object = Mock()
+        self.mock_s3_resource.Object.return_value = self.mock_s3_object
+        self.mock_s3_object.get.return_value = {'Body': BytesIO(json.dumps(self.mock_json_data).encode())}
 
         # Call json_df function, store result
-        df_array = json_df()
+        self.df_array = json_df()
 
-        # Add assertions to check correctness of df_array
-        self.check_df_rows_and_columns(df_array)
-        self.check_df_not_none(df_array)
+    def tearDown(self):
+        self.mock_boto3_resource.stop()
+        self.mock_boto3_client.stop()
 
-    def check_df_rows_and_columns(self, df_array):
+    def test_check_df_rows_and_columns(self):
         # Check rows and columns in df_array
-        for idx, df in enumerate(df_array):
+        for idx, df in enumerate(self.df_array):
             self.assertEqual(df.shape, (1, 10))  # Check expected shape (1 row, 10 columns - EDIT FOR SPLIT NAMES)
 
-    def check_df_not_none(self, df_array):
+    def test_check_df_not_none(self):
         # Check if DF is okay in df_array
-        for idx, df in enumerate(df_array):
-            self.assertIsInstance(df, pd.DataFrame)  # Check if it's a DF not NONE
+        for idx, df in enumerate(self.df_array):
+            self.assertIsInstance(df, pd.DataFrame)  # Check if it's a DF not NONE.
+
+    def test_json_extraction(self):
+        # Add test for json_extraction here
+        pass
 
 if __name__ == "__main__":
     unittest.main()
