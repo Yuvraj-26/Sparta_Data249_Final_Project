@@ -39,4 +39,5 @@ def json_df():
     # Test to check count of extracted files is same as expected (is it one to one)
     # Test that data frames are not empty
     # Test expected number of columns and rows
-    #print(df_array)
+if __name__ == "__main__":
+    df_array = json_df()
