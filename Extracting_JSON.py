@@ -1,8 +1,8 @@
 import boto3
 import json
 import pandas as pd
-def json_df():
 
+def json_df():
     s3_client = boto3.client('s3')
     s3_resource = boto3.resource('s3')
 
@@ -19,15 +19,14 @@ def json_df():
                 json_content = response['Body'].read()
 
                 data = json.loads(json_content)
-                df_array.append(data)
 
-                # Test here to check that is correctly extracted in proper Data frame format
+                # Create DF from JSON data
                 if isinstance(data, list):  # Check if the JSON data is a list of dictionaries
                     df = pd.DataFrame(data)
-                    print(df)
+                    df_array.append(df)
                 elif isinstance(data, dict):  # Check if the JSON data is a single dictionary
                     df = pd.DataFrame([data])
-                    print(df)
+                    df_array.append(df)
                 else:
                     print(f"Unsupported JSON format in '{json_object['Key']}'")
 
@@ -36,7 +35,17 @@ def json_df():
     except Exception as e:
         print(f"Error: {e}")
 
-    # Test to check count of extracted files is same as expected (is it one to one)
-    # Test that data frames are not empty
-    # Test expected number of columns and rows
-    #print(df_array)
+    # Commented out printing part to see if working
+    '''
+    # Print the first few example DataFrames
+    for i, df in enumerate(df_array[:3]):  # Print the first 3 DataFrames as examples
+        print(f"Example DataFrame {i + 1}:")
+        print(df)
+        print()
+    '''
+
+    return df_array
+
+# Call json_df function to retrieve and return example DataFrames
+if __name__ == "__main__":
+    example_dfs = json_df()
