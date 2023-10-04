@@ -39,10 +39,9 @@ def expand_strength_weakness(df):
         # Add new weakness columns to ore-existing data frame
         df = pd.concat([df, weakness_df], axis=1)
 
-        # Droporiginal 'weakness' column
+        # Droporiginal weakness column
         df.drop(columns=['weaknesses'], inplace=True)
     return df
-
 
 def split_name_column(df):
     if 'name' in df.columns:
