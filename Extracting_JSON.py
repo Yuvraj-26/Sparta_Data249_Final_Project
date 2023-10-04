@@ -35,14 +35,11 @@ def json_df():
     except Exception as e:
         print(f"Error: {e}")
 
-    # Commented out printing part to see if working
-    '''
-    # Print the first few example DataFrames
+    # Print the first few rows of each DataFrame
     for i, df in enumerate(df_array[:3]):  # Print the first 3 DataFrames as examples
         print(f"Example DataFrame {i + 1}:")
-        print(df)
+        print(df.head())  # Use print() to show the DataFrame
         print()
-    '''
 
     return df_array
 
