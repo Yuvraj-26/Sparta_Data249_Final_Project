@@ -25,7 +25,7 @@ def json_df():
 
                     data = json.loads(json_content)
 
-                    # Create DF from JSON data
+                    # Create DF from JSON
                     if isinstance(data, list):  # Check if the JSON data is a list of dictionaries
                         df = pd.DataFrame(data)
                         df_array.append(df)
