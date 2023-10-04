@@ -18,7 +18,6 @@ def expand_tech_self_score(df):
         df.drop(columns=['tech_self_score'], inplace=True)
     return df
 
-
 def expand_strength_weakness(df):
     # Check strength and weakness columns exits in the pre-existing data frame
     if 'strengths' in df and all(isinstance(item, list) for item in df['strengths']):
