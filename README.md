@@ -1,4 +1,4 @@
-# Sparta Data 249 ~⚙~ Final Project 
+# Sparta Data 249 ⚙ Final Project 
 
 
 For our final project, we've created an ETL pipeline to ingest, transform, and input fictional Sparta Global data into a database which provides a single person view.
@@ -51,38 +51,38 @@ In order to run the pipeline, it is first necessary to set up the database in a 
 
 
 ### SCRUM Master: 
-Martin Wormwell @MW200410
+<a href= "https://www.github.com/MW200410)">Martin Wormwell</a> @MW200410
 
 
 
 ### Product Owner: 
-Taslima Hossain @taslimahossain
+<a href= "https://www.github.com/taslimahossain)">Taslima Hossain @taslimahossain</a> 
 
 ### Git Authority
 
-Yuvraj Mahida @Yuvraj-26
+<a href= "https://www.github.com/Yuvraj-26)">Yuvraj Mahida @Yuvraj-26</a>
 
 
 
 ### Data Engineering Team
 
-- Ruth Chanarin  @ruthChanarin
+- <a href= "https://www.github.com/ruthChanarin)">Ruth Chanarin @ruthChanarin </a>
 
-- Tommy Ainsworth @tommyainsworth
+- <a href= "https://www.github.com/tommyainsworth)">Tommy Ainsworth @tommyainsworth </a>
 
-- Killian Hughes @Kill-Hxps
+- <a href= "https://www.github.com/Kill-Hxps)">Killian Hughes @Kill-Hxps </a>
 
-- Sophie Wilkie @wilkiesophie
+- <a href= "https://www.github.com/wilkiesophie)">Sophie Wilkie @wilkiesophie </a>
 
-- Isak Grimsson @IsakGrimsson
+- <a href= "https://www.github.com/IsakGrimsson)">Isak Grimsson @IsakGrimsson </a>
 
-- Jack Cavanagh @JCav23
+- <a href= "https://www.github.com/JCav23)">Jack Cavanagh @JCav23 </a>
 
-- Lauren Gorst @LaurenG123
+- <a href= "https://www.github.com/LaurenG123)">Lauren Gorst @LaurenG123 </a>
 
-- Karis Reimers @Karisjr
+- <a href= "https://www.github.com/Karisjr)">Karis Reimers @Karisjr </a>
 
-- Andrew Carver @andyc2901
+- <a href= "https://www.github.com/andyc2901)">Andrew Carver @andyc2901 </a>
 
 
 Also, big credit & thanks to Tommy & Paula, our wonderful and ever so patient trainers, for giving us the skills to put this project together, and empowering us in our data engineering journeys. 
