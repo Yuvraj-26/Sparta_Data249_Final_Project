@@ -41,8 +41,23 @@ class Txt_Tests(unittest.TestCase):
         txt = data_access.read_txt(bucket)
         df = data_access.write_to_dataframe(txt)
         actual_columns = list(df.columns)
-        expected_columns = ['Name', 'Psychometric Score', 'Presentation Score']
+        expected_columns = ['name', 'psychometric_score', 'presentation_score']
         self.assertEqual(actual_columns, expected_columns, 'Error: Columns do not match')
+
+    def test_csv_rows(self):
+        bucket = data_access.s3_connect('data-249-final-project')
+        df = data_access.read_csv(bucket, 'Talent')
+        actual_rows = len(df)
+        expected_value = 4691
+        self.assertEqual(actual_rows, expected_value, 'Error: Incorrect Number of Rows')
+
+    def test_academy_csv(self):
+        bucket = data_access.s3_connect('data-249-final-project')
+        df = data_access.read_csv(bucket, 'Academy')
+        col_index = df.columns[1]
+        expected_value = 'trainer'
+        self.assertEqual(col_index, expected_value, 'Error: Incorrect Column Name')
+
 
 
 if __name__ == '__main__':
