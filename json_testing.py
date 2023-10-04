@@ -3,7 +3,7 @@ from unittest.mock import Mock, patch
 from io import BytesIO
 import json
 import pandas as pd
-from extracting_JSON import json_df  # Import json_df function from main script
+from extracting_json import json_df  # Import json_df function from main script
 
 class TestJsonToDataFrame(unittest.TestCase):
     def setUp(self):
