@@ -65,9 +65,5 @@ class TestJsonToDataFrame(unittest.TestCase):
         for idx, df in enumerate(self.df_array):
             self.assertIsInstance(df, pd.DataFrame)  # Check if it's a DF not NONE.
 
-    def test_json_extraction(self):
-        # Add test for json_extraction here
-        pass
-
 if __name__ == "__main__":
     unittest.main()
