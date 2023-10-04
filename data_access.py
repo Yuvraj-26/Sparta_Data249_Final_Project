@@ -1,5 +1,6 @@
 import boto3
 import pandas as pd
+import io
 
 
 def s3_connect(bucket):
@@ -24,6 +25,16 @@ def read_txt(bucket):
             lines = file.split('\n')
             remove_3 = lines[3:-1]
             all_text.append(remove_3)
+    return all_text
+
+
+def read_csv(bucket, prefix):
+    all_text = pd.DataFrame()
+    for obj in bucket.objects.filter(Prefix=prefix):
+        if obj.key.endswith('csv'):
+            file = obj.get()['Body'].read().decode()
+            df = pd.read_csv(io.StringIO(file))
+            all_text = pd.concat([all_text, df])
     return all_text
 
 
