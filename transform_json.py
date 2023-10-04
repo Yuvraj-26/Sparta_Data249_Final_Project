@@ -14,7 +14,7 @@ def expand_tech_self_score(df):
         # Add the new columns to pre-existing data frame (now languages are last columns)
         df = pd.concat([df, tech_self_score_df], axis=1)
 
-        # Drop the original 'tech_self_score' column since it has been replaced will the new columns
+        # Drop the original 'tech_self_score' column since it has been replaced with the new columns
         df.drop(columns=['tech_self_score'], inplace=True)
     return df
 
