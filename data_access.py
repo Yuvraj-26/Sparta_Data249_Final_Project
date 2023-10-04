@@ -35,9 +35,9 @@ def write_to_dataframe(file):
             score_lines = line[line.index(" -  "):].split()
             psychometric_score = score_lines[-3][:score_lines[-3].index('/')]
             presentation_score = score_lines[-1][:score_lines[-1].index('/')]
-            person_dict = {'Name': name,
-                           'Psychometric Score': psychometric_score,
-                           'Presentation Score': presentation_score}
+            person_dict = {'name': name,
+                           'psychometric_score': psychometric_score,
+                           'presentation_score': presentation_score}
             list_person_dict.append(person_dict)
     df = pd.DataFrame(list_person_dict)
     return df
