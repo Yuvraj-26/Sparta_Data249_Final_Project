@@ -4,6 +4,7 @@ import boto3
 
 pd.set_option('display.max_columns', None)
 
+
 # Function to list each tech language skill in JSON as new column with key as column label and value as cell in row
 def expand_tech_self_score(df):
     # Check 'tech_self_score' column exists in our pre-created data frames and that it contains dictionaries
