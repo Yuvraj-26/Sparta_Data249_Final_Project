@@ -1,6 +1,6 @@
-from Extracting_JSON import *
+from extract_json import *
 import pandas as pd
-
+import matplotlib.pyplot as plt
 
 pd.set_option('display.max_columns', None)
 
@@ -52,9 +52,9 @@ def split_name_column(df):
     return df
 
 def convert_yes_no_to_binary(df):
-    for column in df.columns:
-        if df[column].dtype == 'object':
-            df[column] = df[column].apply(lambda x: 1 if x.lower() == 'yes' else (0 if x.lower() == 'no' else x))
+    binary_columns = ['self_development', 'geo_flex', 'financial_support_self']
+    for column in binary_columns:
+        df[column] = df[column].apply(lambda x: 1 if isinstance(x, str) and x.lower() == 'yes' else (0 if isinstance(x, str) and x.lower() == 'no' else x))
     return df
 
 def convert_date(df):
@@ -86,3 +86,4 @@ def process_example_dfs(example_dfs):
 if __name__ == "__main__":
     example_dfs = json_df()
     print(process_example_dfs(example_dfs))
+
