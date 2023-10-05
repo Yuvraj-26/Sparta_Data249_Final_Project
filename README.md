@@ -51,38 +51,38 @@ In order to run the pipeline, it is first necessary to set up the database in a 
 
 
 ### SCRUM Master: 
-<a href= "https://www.github.com/MW200410)">Martin Wormwell</a> @MW200410
+<a href= "https://www.github.com/MW200410">Martin Wormwell @MW200410</a> 
 
 
 
 ### Product Owner: 
-<a href= "https://www.github.com/taslimahossain)">Taslima Hossain @taslimahossain</a> 
+<a href= "https://www.github.com/taslimahossain">Taslima Hossain @taslimahossain</a> 
 
 ### Git Authority
 
-<a href= "https://www.github.com/Yuvraj-26)">Yuvraj Mahida @Yuvraj-26</a>
+<a href= "https://www.github.com/Yuvraj-26">Yuvraj Mahida @Yuvraj-26</a>
 
 
 
 ### Data Engineering Team
 
-- <a href= "https://www.github.com/ruthChanarin)">Ruth Chanarin @ruthChanarin </a>
+- <a href= "https://www.github.com/ruthChanarin">Ruth Chanarin @ruthChanarin </a>
 
-- <a href= "https://www.github.com/tommyainsworth)">Tommy Ainsworth @tommyainsworth </a>
+- <a href= "https://www.github.com/tommyainsworth">Tommy Ainsworth @tommyainsworth </a>
 
-- <a href= "https://www.github.com/Kill-Hxps)">Killian Hughes @Kill-Hxps </a>
+- <a href= "https://www.github.com/Kill-Hxps">Killian Hughes @Kill-Hxps </a>
 
-- <a href= "https://www.github.com/wilkiesophie)">Sophie Wilkie @wilkiesophie </a>
+- <a href= "https://www.github.com/wilkiesophie">Sophie Wilkie @wilkiesophie </a>
 
-- <a href= "https://www.github.com/IsakGrimsson)">Isak Grimsson @IsakGrimsson </a>
+- <a href= "https://www.github.com/IsakGrimsson">Isak Grimsson @IsakGrimsson </a>
 
-- <a href= "https://www.github.com/JCav23)">Jack Cavanagh @JCav23 </a>
+- <a href= "https://www.github.com/JCav23">Jack Cavanagh @JCav23 </a>
 
-- <a href= "https://www.github.com/LaurenG123)">Lauren Gorst @LaurenG123 </a>
+- <a href= "https://www.github.com/LaurenG123">Lauren Gorst @LaurenG123 </a>
 
-- <a href= "https://www.github.com/Karisjr)">Karis Reimers @Karisjr </a>
+- <a href= "https://www.github.com/Karisjr">Karis Reimers @Karisjr </a>
 
-- <a href= "https://www.github.com/andyc2901)">Andrew Carver @andyc2901 </a>
+- <a href= "https://www.github.com/andyc2901">Andrew Carver @andyc2901 </a>
 
 
 Also, big credit & thanks to Tommy & Paula, our wonderful and ever so patient trainers, for giving us the skills to put this project together, and empowering us in our data engineering journeys. 
