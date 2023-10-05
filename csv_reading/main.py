@@ -13,3 +13,5 @@ import data_access
 bucket = data_access.s3_connect('data-249-final-project')
 file = data_access.read_csv(bucket, 'Academy')
 print(file)
+
+trainer_junction = {'course_id' : course_data.course_name}
