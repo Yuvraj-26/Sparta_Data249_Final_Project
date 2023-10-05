@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b103a9e-4e72-4b85-bdff-394fa9da3a09" name="Changes" comment="adding extract_transform file">
-      <change beforePath="$PROJECT_DIR$/extract_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/extract_json.py" afterDir="false" />
+    <list default="true" id="9b103a9e-4e72-4b85-bdff-394fa9da3a09" name="Changes" comment="adding FINALISED extract file for JSONs">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transform_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/transform_json.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +24,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "wilkiesophie"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="30f0a03c-8bad-46f8-a967-69b157abc620" />
+        <option name="url" value="https://github.com/Yuvraj-26/Sparta_Data249_Final_Project.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/test_json_processor.py" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -38,20 +52,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;sophie-dev&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/sophie/Desktop&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "sophie-dev-2",
+    "last_opened_file_path": "/Users/sophie/Desktop",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/../Desktop" />
@@ -60,7 +74,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Extracting_JSON">
+  <component name="RunManager">
     <configuration name="Extracting_JSON" type="PythonConfigurationType" factoryName="Python" activateToolWindowBeforeRun="false" nameIsGenerated="true">
       <module name="Sparta_Data249_Final_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,7 +150,71 @@
       <option name="project" value="LOCAL" />
       <updated>1696416188772</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="adding FINALISED transform file for JSONs">
+      <option name="closed" value="true" />
+      <created>1696428735827</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696428735827</updated>
+    </task>
+    <task id="LOCAL-00004" summary="adding FINALISED transform file for JSONs">
+      <option name="closed" value="true" />
+      <created>1696428861514</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696428861514</updated>
+    </task>
+    <task id="LOCAL-00005" summary="adding FINALISED transform file for JSONs">
+      <option name="closed" value="true" />
+      <created>1696428953799</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696428953799</updated>
+    </task>
+    <task id="LOCAL-00006" summary="adding FINALISED transform file for JSONs">
+      <option name="closed" value="true" />
+      <created>1696429076977</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696429076977</updated>
+    </task>
+    <task id="LOCAL-00007" summary="adding FINALISED transform file for JSONs">
+      <option name="closed" value="true" />
+      <created>1696429463607</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696429463607</updated>
+    </task>
+    <task id="LOCAL-00008" summary="adding FINALISED transform file for JSONs">
+      <option name="closed" value="true" />
+      <created>1696429620754</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696429620754</updated>
+    </task>
+    <task id="LOCAL-00009" summary="adding FINALISED extract file for JSONs">
+      <option name="closed" value="true" />
+      <created>1696429659827</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696429659827</updated>
+    </task>
+    <task id="LOCAL-00010" summary="adding FINALISED extract file for JSONs">
+      <option name="closed" value="true" />
+      <created>1696430926672</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696430926672</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,12 +234,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adding ERD jpeg" />
     <MESSAGE value="adding extract_transform file" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding extract_transform file" />
+    <MESSAGE value="adding FINALISED transform file for JSONs" />
+    <MESSAGE value="adding FINALISED extract file for JSONs" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding FINALISED extract file for JSONs" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Sparta_Data249_Final_Project$Extracting_JSON.coverage" NAME="Extracting_JSON Coverage Results" MODIFIED="1696427439984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Sparta_Data249_Final_Project$Extracting_JSON.coverage" NAME="Extracting_JSON Coverage Results" MODIFIED="1696447280463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Sparta_Data249_Final_Project$transform_json.coverage" NAME="transform_json Coverage Results" MODIFIED="1696448494454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Sparta_Data249_Final_Project$extract_json.coverage" NAME="extract_json Coverage Results" MODIFIED="1696448490375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Sparta_Data249_Final_Project$transformations_json.coverage" NAME="transformations_json Coverage Results" MODIFIED="1696415026034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Sparta_Data249_Final_Project$.coverage" NAME=" Coverage Results" MODIFIED="1696405798507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Sparta_Data249_Final_Project$.coverage" NAME=" Coverage Results" MODIFIED="1696448861218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Sparta_Data249_Final_Project$extract_transform_json.coverage" NAME="extract_transform_json Coverage Results" MODIFIED="1696424706142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Sparta_Data249_Final_Project$test_json_processor.coverage" NAME="test_json_processor Coverage Results" MODIFIED="1696348068195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
