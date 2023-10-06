@@ -67,7 +67,7 @@ desired_order = ['talent_id', 'first_name', 'last_name', 'gender', 'dob', 'email
                  'invited_first_name', 'invited_last_name']
 talent_df = talent_df[desired_order]
 
-#print(talent_df)
+print(talent_df)
 
 # Merged df to replace uni degree and city with corresponding primary keys
 merged_df = talent_df.merge(uni_df, how='left', on='uni')
