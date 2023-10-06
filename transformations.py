@@ -2,8 +2,10 @@ import pandas as pd
 import numpy as np
 import re
 
+
 def convert_to_int(df, column_name):
     df[column_name] = df[column_name].astype('int')
+
 
 def split_column_on_space(df, column_to_split, name1_column, name2_column):
     df[[name1_column, name2_column]] = df[column_to_split].apply(lambda x: pd.Series(str(x).split(" ", 1)))
@@ -15,49 +17,61 @@ def split_column_on_space(df, column_to_split, name1_column, name2_column):
     df.insert(column_to_split_index, name1_column, name1_pop)
     return df
 
+
 def lower_case_columns(df):
     df.columns = df.columns.str.lower()
     return df
 
+
 def convert_rows_to_lower(df, column_name):
     df[column_name] = df[column_name].str.lower()
     return df
+
 
 def reverse_date(df, column_name):
     date_split = df[column_name].str.split('/', expand=True)
     df[column_name] = date_split[2] + '/' + date_split[1] + '/' + date_split[0]
     return df
 
+
 def convert_column_to_date(df, column_name):
     df[column_name] = pd.to_datetime(df[column_name])
     return df
+
 
 def replace_strings_in_column(df, column, to_replace, replace_with):
     df[column] = df[column].replace(to_replace, replace_with)
     return df
 
+
 def convert_nan_to_0(df, column):
     df[column] = df[column].fillna(0)
     return df
+
 
 def convert_all_nan_to_0(df):
     df.replace(np.nan,0)
     return df
 
+
 def convert_rows_to_string(df, column):
     df[column] = df[column].astype(str)
     return df
+
 
 def merge_columns(df, column1, column2):
     df[column1] = df[column1] + df[column2]
     return df
 
+
 def convert_all_0_to_nan(df):
     df.replace(0,np.nan)
     return df
 
+
 def convert_column_to_date_full(df, column):
     df[column] = pd.to_datetime(df[column], format='%d%B %Y')
+
 
 # Clean and standardize UK phone numbers
 def clean_uk_phone_number(phone):
@@ -71,9 +85,11 @@ def clean_uk_phone_number(phone):
             phone = f'0{phone[:1]} {phone[1:5]} {phone[5:]}'
     return phone
 
+
 def apply_standard_uk_number_to_column(df, column):
     df[column] = df[column].apply(clean_uk_phone_number)
     return df
+
 
 def expand_tech_self_score(df):
     # Check 'tech_self_score' column exists in our pre-created data frames and that it contains dictionaries
@@ -87,6 +103,7 @@ def expand_tech_self_score(df):
         # Drop the original 'tech_self_score' column since it has been replaced will the new columns
         df.drop(columns=['tech_self_score'], inplace=True)
     return df
+
 
 def expand_strength_weakness(df):
     # Check strength and weakness columns exits in the pre-existing data frame

@@ -1,8 +1,11 @@
-from extract_json import *
+import data_access
+from data_access import json_df
 import pandas as pd
 import matplotlib.pyplot as plt
 
 pd.set_option('display.max_columns', None)
+transformed_df = data_access.json_df()
+
 
 # Function to list each tech language skill in JSON as new column with key as column label and value as cell in row
 def expand_tech_self_score(df):
@@ -19,6 +22,7 @@ def expand_tech_self_score(df):
         # Drop the original 'tech_self_score' column since it has been replaced will the new columns
         df.drop(columns=['tech_self_score'], inplace=True)
     return df
+
 
 def expand_strength_weakness(df):
     # Check strength and weakness columns exits in the pre-existing data frame
@@ -41,9 +45,10 @@ def expand_strength_weakness(df):
         # Add new weakness columns to ore-existing data frame
         df = pd.concat([df, weakness_df], axis=1)
 
-        # Droporiginal 'weakness' column
+        # Drop Original 'weakness' column
         df.drop(columns=['weaknesses'], inplace=True)
     return df
+
 
 def split_name_column(df):
     if 'name' in df.columns:
@@ -51,20 +56,23 @@ def split_name_column(df):
         df.drop(columns=['name'], inplace=True)
     return df
 
+
 def convert_yes_no_to_binary(df):
     binary_columns = ['self_development', 'geo_flex', 'financial_support_self']
     for column in binary_columns:
         df[column] = df[column].apply(lambda x: 1 if isinstance(x, str) and x.lower() == 'yes' else (0 if isinstance(x, str) and x.lower() == 'no' else x))
     return df
 
+
 def convert_date(df):
     # Converts a date string to a date object.
     df['date'] = pd.to_datetime(df['date'], dayfirst=True)
     return df
 
-def process_example_dfs(example_dfs):
+
+def process_example_dfs(transformed_dfs):
     processed_json_dfs = []
-    for df in example_dfs:
+    for df in transformed_dfs:
 
         df = expand_tech_self_score(df)
         df = expand_strength_weakness(df)
@@ -83,6 +91,6 @@ def process_example_dfs(example_dfs):
     return concatenated_df
 
 
-if __name__ == "__main__":
-    example_dfs = json_df()
-    print(process_example_dfs(example_dfs))
+# if __name__ == "__main__":
+#     example_dfs = json_df()
+#     print(process_example_dfs(example_dfs))

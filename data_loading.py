@@ -26,15 +26,13 @@ df1.merge(df2, how='inner', on='first_name')
 
 personal_info_df = spartans_merged['first_name', 'last_name', 'gender', 'DOB', 'email']
 
-
-
-
 # Creating dataframes for each of the tables, and renaming the columns so that they match those of the SQL table
 
 # trainers table can be made by finding the unique trainer names, then uploading with generate their ids
 
 unique_trainers = academy_csv_df[['trainers_first_name', 'trainers_last_name']].drop_duplicates()
-trainers_df = unique_trainers.rename(columns={'trainers_first_name':'trainer_firstname','trainers_last_name':'trainers_lastname'})
+trainers_df = unique_trainers.rename(columns={'trainers_first_name': 'trainer_firstname',
+                                              'trainers_last_name': 'trainers_lastname'})
 
 # courses table can be made by finding the unique course names, then uploading to SQL with generate their ids
 

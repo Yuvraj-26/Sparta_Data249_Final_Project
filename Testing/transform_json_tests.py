@@ -16,6 +16,7 @@ sample_data = {
 
 sample_df = pd.DataFrame(sample_data)
 
+
 class TestDataCleaningFunctions:
     def test_expand_tech_self_score(self):
         expanded_df = expand_tech_self_score(sample_df)
