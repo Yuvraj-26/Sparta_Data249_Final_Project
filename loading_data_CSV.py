@@ -1,31 +1,8 @@
 from transform_dfs import *
 from main import *
+from load_dataframe import create_csv_df, recruiter_id_df
+
 talent_df = main()
-
-
-def create_csv_df(df, column_name, custom_order=None):
-    # Data Frame to store column name
-    ordered_df = pd.DataFrame()
-    ordered_df[column_name] = df[column_name].drop_duplicates()
-    # Keeping only distinct values
-    ordered_df = ordered_df.dropna().reset_index(drop=True)
-    # Dropping NaN and resetting index
-
-    if custom_order is not None:
-        # this is specifically for degree as I wanted to order 1st, 2:1, 2:2 and 3rd in that order
-        # when calling this function, user must specify a custom order they want as a variable
-        ordered_df['ordered_' + column_name] = ordered_df[column_name].map(custom_order)
-        ordered_df = ordered_df.sort_values(by='ordered_' + column_name)
-        ordered_df = ordered_df.drop(columns='ordered_' + column_name).reset_index(drop=True)
-
-    ordered_df[f'{column_name}_id'] = ordered_df.index + 1
-    # adding an index inside the Data Frame
-    desired_order = [f'{column_name}_id', column_name]
-    # ordering the columns
-    ordered_df = ordered_df[desired_order]
-
-    return ordered_df
-
 
 uni_df = create_csv_df(talent_df, 'uni')
 custom_degree_order = {'1st': 1, '2:1': 2, '2:2': 3, '3rd': 4}
@@ -40,7 +17,7 @@ col = talent_df.columns
 # print(col)
 desired_order = ['talent_id', 'first_name', 'last_name', 'gender', 'dob', 'email', 'city', 'house_number', 'street_name', 'postcode', 'phone_number', 'uni', 'degree', 'invited_date', 'month', 'invited_first_name', 'invited_last_name']
 talent_df = talent_df[desired_order]
-print(talent_df)
+# print(talent_df)
 
 merged_df = talent_df.merge(uni_df, how='left', on='uni')
 merged_df = merged_df.merge(degree_df, how='left', on='degree')
@@ -55,8 +32,11 @@ merged_df = merged_df.drop(columns=['uni', 'degree', 'city'])
 
 columns_to_extract = ['talent_id', 'city_id', 'house_number', 'street_name', 'postcode']
 address_junction_df = merged_df[columns_to_extract]
-print(address_junction_df)
+# print(address_junction_df)
 
 columns_to_extract = ['talent_id', 'uni_id', 'degree_id']
 uni_junction_df = merged_df[columns_to_extract]
-print(uni_junction_df)
+# print(uni_junction_df)
+
+recruiter_df = recruiter_id_df(talent_df)
+print(recruiter_df)
