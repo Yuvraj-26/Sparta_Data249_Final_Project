@@ -14,8 +14,9 @@ For our final project, we've created an ETL pipeline to ingest, transform, and i
 # Contents
 
 1. [Methodology](#methodology)
-2. [How to Install](#howto)
-3. [Credits](#credits)
+2. [Data Transformations](#transformations)
+3. [How to Install](#howto)
+4. [Credits](#credits)
 
 <a name="methodology"></a>
 #  Methodology
@@ -38,6 +39,31 @@ The data are loaded into a SQL database which is normalised to third normal form
 ## <a href= "https://drive.google.com/file/d/1ooZ4fmxefSlmGnYa4AS6cw7-YV5a2VI2/view?usp=sharing">Link to our Full ERD Diagram</a>
 
                                                     ~⚙~⚙~
+
+<a name="transformations"></a>
+## Tranformations
+
+Before we loaded our data into the SQL database, we needed to transform quite a bit of it. In particular data types had to be assigned to ensure that the data was in the correct type, since in the original data frames, all of the columns were stored as object data type:
+
+### ⚙ Data Type Transformations ⚙
+
+-   Pyschometric & presentation scores -> Integers
+- Dates -> Datetime
+- JSON fields -> Bit type
+
+There were some other data transformations which were necessary to ensure that our data complied with normalisation, was atomic & able to be inputted smoothly into our database strcture as set out in the ERD.
+
+### ⚙ Data Manipulations ⚙
+
+- Names split into first name & surname
+- House number & street split into two 
+- Weaknesses & strengths split into two 
+- Tech scores in dictionary split into separate columns
+
+We also changed all of the names into lower case so as to ensure uniformity and matching. 
+
+                                                    ~⚙~⚙~
+
 
 <a name="howto"></a>
 ## How to Run and Install
