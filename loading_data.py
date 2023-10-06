@@ -1,24 +1,7 @@
+import transformations as tf
 from main import *
 talent_df = main()
 
-# import sqlalchemy
-# from sqlalchemy import create_engine
-# import pandas as pd
-# import pprint as pp
-# import numpy as np
-#
-# server_name = 'your-server-name'
-# database_name = 'your-database-name'
-# username = 'your_username'
-# password = 'your_password'
-#
-# connection_string = f"mssql+pyodbc://{username}:{password}@{server_name}/{database_name}?driver=ODBC+Driver+17+for+SQL+Server"
-# engine = create_engine(connection_string)
-
-# df.to_sql(name='table_name', con=engine, if_exists='replace', index=False)
-
-# col = talent_df.columns
-# print(col)
 
 def create_csv_df(df, column_name, custom_order=None):
     # Data Frame to store column name
@@ -45,11 +28,58 @@ def create_csv_df(df, column_name, custom_order=None):
 
 
 uni_df = create_csv_df(talent_df, 'uni')
-print(uni_df)
 custom_degree_order = {'1st': 1, '2:1': 2, '2:2': 3, '3rd': 4}
 degree_df = create_csv_df(talent_df, 'degree', custom_degree_order)
-print(degree_df)
 city_df = create_csv_df(talent_df, 'city')
-print(city_df)
 
+
+
+def transform_csv_talent(df):
+    tf.replace_strings_in_column(df, 'invited_by', "Bruno Belbrook", "Bruno Bellbrook")
+    tf.replace_strings_in_column(df, 'invited_by', "Fifi Etton", "Fifi Eton")
+    tf.split_column_on_space(df, 'name', 'first_name', 'last_name')
+    tf.convert_rows_to_lower(df, 'first_name')
+    tf.convert_rows_to_lower(df, 'last_name')
+    tf.reverse_date(df, 'dob')
+    df.drop(columns='id', inplace=True)
+    tf.convert_column_to_date(df, 'dob')
+    tf.split_column_on_space(df, 'invited_by', 'invited_first_name', 'invited_last_name')
+    tf.split_column_on_space(df, 'address', 'house_number', 'street_name')
+    tf.replace_strings_in_column(df, 'month', 'SEPT 2019', 'September 2019')
+    tf.convert_nan_to_0(df, 'invited_date')
+    tf.convert_to_int(df, 'invited_date')
+    tf.convert_rows_to_string(df, 'invited_date')
+    tf.merge_columns(df, 'invited_date', 'month')
+    df.drop(columns='month')
+    tf.convert_column_to_date_full(df, 'invited_date')
+    tf.apply_standard_uk_number_to_column(df, 'phone_number')
+    return df
+
+transform_csv_talent(talent_df)
+
+talent_df = talent_df.reset_index(drop=True)
+talent_df['talent_id'] = talent_df.index + 1
+col = talent_df.columns
+# print(col)
+desired_order = ['talent_id', 'first_name', 'last_name', 'gender', 'dob', 'email', 'city', 'house_number', 'street_name', 'postcode', 'phone_number', 'uni', 'degree', 'invited_date', 'month', 'invited_first_name', 'invited_last_name']
+talent_df = talent_df[desired_order]
 print(talent_df)
+
+merged_df = talent_df.merge(uni_df, how='left', on='uni')
+merged_df = merged_df.merge(degree_df, how='left', on='degree')
+merged_df = merged_df.merge(city_df, how='left', on='city')
+
+# drop the uni, degree, and city columns from the merged DataFrame
+merged_df = merged_df.drop(columns=['uni', 'degree', 'city'])
+
+# Print the merged DataFrame
+# print(merged_df)
+
+
+columns_to_extract = ['talent_id', 'city_id', 'house_number', 'street_name', 'postcode']
+address_junction_df = merged_df[columns_to_extract]
+print(address_junction_df)
+
+columns_to_extract = ['talent_id', 'uni_id', 'degree_id']
+uni_junction_df = merged_df[columns_to_extract]
+print(uni_junction_df)
