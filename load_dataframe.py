@@ -138,16 +138,6 @@ def courses_table(df):
     return extracted_courses_df
 
 
-# # BELOW USED FOR TESTING PURPOSES - REMOVE BEFORE FINAL SUBMISSION
-# talent_df = data_access.read_csv(bucket, 'Talent')
-# uni_df = create_csv_df(talent_df, 'uni')
-# print(uni_df)
-# custom_degree_order = {'1st': 1, '2:1': 2, '2:2': 3, '3rd': 4}
-# degree_df = create_csv_df(talent_df, 'degree', custom_degree_order)
-# print(degree_df)
-# city_df = create_csv_df(talent_df, 'city')
-# print(city_df)
-#
 if __name__ == "__main__":
     example_dfs = json_df()
     processed_df = process_example_dfs(example_dfs)
